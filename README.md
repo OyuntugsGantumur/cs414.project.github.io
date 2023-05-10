@@ -102,17 +102,4 @@ Click the link below to run [our notebook](https://github.com/pard187/pard187.gi
 <br> <br> <br>
 
 # Youtube Video Link
-<<<<<<< HEAD
 Check out our walkthrough video [here](https://youtube.com/watch?v=IXMQVvu-zYY)!
-=======
-Check out our walkthrough video [here](https://youtube.com/watch?v=IXMQVvu-zYY)!
-
-# Inquiries
-
-
-# References
-
-Kyranides, M.N., Christofides, D. & Çetin, M. Difficulties in facial emotion recognition: taking psychopathic and alexithymic traits into account. BMC Psychol 10, 239 (2022). https://doi.org/10.1186/s40359-022-00946-x
-
-Parkinson, B. (2001). Anger on and off the road. British journal of Psychology, 92(3), 507-526.
->>>>>>> 95a21a2bd440cd65681735131a8563b1dd3a2df2

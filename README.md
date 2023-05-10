@@ -77,14 +77,37 @@ Let's use the below image as example for how we applied our model in "real-life"
 
 1. Before performing any face detection, we first converted the image to grayscale to reduce its noise and improve computational efficiency as it is easier to identify faces in grayscale than in color. 
 
+<p align="center">
+    <img src = "images/grayscale.png" alt = "Grayscale image">
+</p>
 
-For face detection, we used the pre-trained haarcascade classifier built in OpenCV. This algorithm uses edge or line detection features proposed by Viola and Jones. This model is based on the sum of pixels for various facial features - such as eyes are darker than the nose and cheeks regions, and eyes are darker than the bridge of the nose - and is trained with a lot of positive images with faces and negative images with no face. We chose to use the OpenCV haarcascade classifier because it is fast and requires less computing power, making it suitable for our limited time and resource. It can also detect faces in a wide range of orientations and scales, making them versatile for a variety of situations and scenarios. However, we have later learned that the downside of the haarcascade model is that it produces many false positives. In order to reduce the number of false positive, we decided to make the filtering process a bit more strict: we increased the minNeighbors to three so false positives from the background are removed; and we modified the scaleFactor to 1.3 so the larger faces, or the main faces in the frame, can be detected faster and more accurately. These changes run the risk of missing some faces, but we think eliminating false positives is more important than missing a few true positives in terms of efficiency and accuracy.
+2. Face detection
+- We used the pre-trained haarcascade classifier built in OpenCV for face detection. This algorithm uses edge or line detection features proposed by Viola and Jones. This model is based on the sum of pixels for various facial features - such as eyes are darker than the nose and cheeks regions, and eyes are darker than the bridge of the nose - and is trained with a lot of positive images with faces and negative images with no face. 
+- We chose to use the OpenCV haarcascade classifier because it is fast and requires less computing power, making it suitable for our limited time and resource. It can also detect faces in a wide range of orientations and scales, making them versatile for a variety of situations and scenarios. 
+- However, we have later learned that the downside of the haarcascade model is that it produces many false positives as shown below. 
+
+<p align="center">
+    <img src = "images/faulty_face_detection.png" alt = "Faulty face detection image">
+</p>
+
+- In order to reduce the number of false positive, we decided to make the filtering process a bit more strict: we increased the minNeighbors to three so false positives from the background are removed; and we modified the scaleFactor to 1.3 so the larger faces, or the main faces in the frame, can be detected faster and more accurately. (See below)
+
+<p align="center">
+    <img src = "images/final_face_detection_results.png" alt = "Improved face detection results">
+</p>
+
+- As we can see, these changes run the risk of missing some faces, but we think eliminating false positives is more important than missing a few true positives in terms of efficiency and accuracy.
 
 # Model Running
 (OYU)
 - showing model running image
 - our usage of custom hand-picked images
 - the results and accuracy of our model on those images
+
+
+"Real-life" imag           |  Emotion recognition results
+:-------------------------:|:-------------------------:
+![](https://github.com/OyuntugsGantumur/ML_project/blob/main/test_images/test_3.png?raw=true)  |  ![](https://github.com/OyuntugsGantumur/ML_project/blob/main/images/image_result_1.png?raw=true)
 
 
 # Conclusion

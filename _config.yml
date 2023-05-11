@@ -1,4 +1,2 @@
-remote_theme: pages-themes/slate@v0.2.0
-plugins:
-- jekyll-remote-theme
+theme: jekyll-theme-cayman
 title: Recognizing and identifying human emotions in various environments

@@ -128,4 +128,4 @@ Click the link below to run [our notebook](https://colab.research.google.com/dri
 <br> <br> <br>
 
 # Youtube Video Link
-Check out our walkthrough video [here]()!
+Check out our Youtube video [here](https://youtu.be/LyBAwu7Zr7Y)!

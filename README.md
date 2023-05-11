@@ -66,7 +66,7 @@ After we trained our model, we wanted to apply the model in recognizing emotions
 3. Tune the hyperparameters of haarcascade
 4. Predict the emotions
 
-Let's use the below image as example for how we applied our model in "real-life" images ![alt text](https://github.com/OyuntugsGantumur/ML_project/blob/main/test_images/test_0.jpg?raw=true)
+Let's use the below image as example for how we applied our model in "real-life" images ![alt text](https://github.com/OyuntugsGantumur/cs414.project.github.io/blob/main/test_images/test_0.jpg?raw=true)
 
 
 1. Before performing any face detection, we first converted the image to grayscale to reduce its noise and improve computational efficiency as it is easier to identify faces in grayscale than in color. 
@@ -83,11 +83,11 @@ We detected the faces in each of the images and applied our model for each of th
 
 "Real-life" images         |  Emotion recognition results
 :-------------------------:|:-------------------------:
-![](https://github.com/OyuntugsGantumur/ML_project/blob/main/test_images/test_0.jpg?raw=true)  |  ![](https://github.com/OyuntugsGantumur/ML_project/blob/main/images/image_result_5.png?raw=true)
-![](https://github.com/OyuntugsGantumur/ML_project/blob/main/test_images/test_3.png?raw=true)  |  ![](https://github.com/OyuntugsGantumur/ML_project/blob/main/images/image_result_1.png?raw=true)
-![](https://github.com/OyuntugsGantumur/ML_project/blob/main/test_images/test_4.png?raw=truev)  |  ![](https://github.com/OyuntugsGantumur/ML_project/blob/main/images/image_result_2.png?raw=true)
-![](https://github.com/OyuntugsGantumur/ML_project/blob/main/test_images/test_5.png?raw=truev)  |  ![](https://github.com/OyuntugsGantumur/ML_project/blob/main/images/image_result_3.png?raw=true)
-![](https://github.com/OyuntugsGantumur/ML_project/blob/main/test_images/test_6.png?raw=truev)  |  ![](https://github.com/OyuntugsGantumur/ML_project/blob/main/images/image_result_4.png?raw=true)
+![](https://github.com/OyuntugsGantumur/cs414.project.github.io/blob/main/test_images/test_0.jpg?raw=true)  |  ![](https://github.com/OyuntugsGantumur/cs414.project.github.io/blob/main/images/image_result_5.png?raw=true)
+![](https://github.com/OyuntugsGantumur/cs414.project.github.io/blob/main/test_images/test_3.png?raw=true)  |  ![](https://github.com/OyuntugsGantumur/cs414.project.github.io/blob/main/images/image_result_1.png?raw=true)
+![](https://github.com/OyuntugsGantumur/cs414.project.github.io/blob/main/test_images/test_4.png?raw=truev)  |  ![](https://github.com/OyuntugsGantumur/cs414.project.github.io/blob/main/images/image_result_2.png?raw=true)
+![](https://github.com/OyuntugsGantumur/cs414.project.github.io/blob/main/test_images/test_5.png?raw=truev)  |  ![](https://github.com/OyuntugsGantumur/cs414.project.github.io/blob/main/images/image_result_3.png?raw=true)
+![](https://github.com/OyuntugsGantumur/cs414.project.github.io/blob/main/test_images/test_6.png?raw=truev)  |  ![](https://github.com/OyuntugsGantumur/cs414.project.github.io/blob/main/images/image_result_4.png?raw=true)
 
 # Conclusion
 

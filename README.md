@@ -94,7 +94,7 @@ Let's use the below image as example for how we applied our model in "real-life"
 
 # Model Running
 
-Due to 
+Due to our limited time, resource and energy, we were able
 
 - showing model running image
 - our usage of custom hand-picked images
@@ -110,7 +110,7 @@ Due to
 ![](https://github.com/OyuntugsGantumur/ML_project/blob/main/test_images/test_6.png?raw=truev)  |  ![](https://github.com/OyuntugsGantumur/ML_project/blob/main/images/image_result_4.png?raw=true)
 
 # Conclusion
-In conclusion, we were able to find boilerplate code for our model and tweak the parameters in order to further improve and optimize it. The model started off having accuracy of 58% and we were able to raise to a consistent output of 62%, by the usage of batch regularization and max pooling. Looking at the result graph below we can see that there is a case of overfitting happening, which could be remedied by adding more data and reducing the number of features. The main issue that we faced in the process of conducting this research was the facial recognition system by Computer Vision library which would sometimes miss human facial features or falsely detect background areas as human faces, as we explained in detail above. This project could benefit from further research and development where we either find the optimal way of facial recognition or create a model that is fed with datasets filled with images of human faces in various angles and positions.
+In conclusion, we were able to find boilerplate code for our model and tweak the parameters in order to further improve and optimize it. The model started off having accuracy of 58% and we were able to raise to a consistent output of 62% for evaluation set, by the usage of batch regularization and max pooling. Looking at the result graph below we can see that there is a case of overfitting happening, which could be remedied by adding more data and reducing the number of features. The main issue that we faced in the process of conducting this research was the facial recognition system by Computer Vision library which would sometimes miss human facial features or falsely detect background areas as human faces, as we explained in detail above. This project could benefit from further research and development where we either find the optimal way of facial recognition or create a model that is fed with datasets filled with images of human faces in various angles and positions.
 
 <p align="center">
     <img src = "images/model_result.png" alt = "Model Result">

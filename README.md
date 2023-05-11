@@ -7,7 +7,7 @@
 -   [Model Running](#model-running)
 -   [Conclusion](#conclusion)
 -   [Future Research](#future-research)
--   [Run Notebook in Google Colab](#run-notebook-in-google-colab)
+-   [Google Colab Notebook](#google-colab-notebook)
 -   [Youtube Video Link](#youtube-video-link)
 
 # Introduction
@@ -54,7 +54,7 @@ To start off, we scoured the Internet in order to find an example code to start 
 The model itself is a sequential model that utilizes convolutional neural networks (CNNs), which is perfect for this project as CNNs are regarded to be very accurate at image recognition and classification. We have 2D convolution layers, where the kernel performs element wise multiplication and summation of results into a single output. For our activation function, we have a ReLU function in our hidden layers, as it circumvents the vanishing gradient problem, results in a better performance and converges at a faster rate than other activation functions. We have also discussed in class that the ReLU sometimes performs better than the hyperbolic tangent functions, and we have also found that to be the case in the process of hyperparameter tuning. The output layer is implemented with the softmax function and it suits our project as it is a multiclass classification problem - given the goal is to label each face with one of the seven emotions - and the softmax performs best when handling multiple classes. 
 
 ## Modifications
-Our next goal was to find a way to reconfigure the model in order to increase the accuracy of the model. We added batch normalization in order to stabilize the inputs, which we believe helped the model’s output at the end. Also, we added max pooling to remove invariances, making the model detect the presence of features rather than its exact location. The specific change we made was to remove average pooling and only utilize max pooling because we believe the former wasn’t extracting important features and was causing the accuracy to be lower. Since we wanted to eventually test the model on images of tilted faces in different angles, we found max pooling to be crucial in the model’s accuracy. Moreover, we added additional layers and experimented to find the optimal solution, meanwhile considering the time we had. Utilizing the GPU engine present in Google Colab, we experimented with different number of layers and tracked the accuracies, which sometimes dropped off from the starting point of 58% accuracy. Eventually, we ended up with a model with over 20 million parameters. We ran the model and received an accuracy ouput of 62%, which was a big improvement. We will dive deeper into the model results below in the conclusion.
+Our next goal was to find a way to reconfigure the model in order to increase the accuracy of the model. We added batch normalization in order to stabilize the inputs, which we believe helped the model’s output at the end. Also, we added max pooling to remove invariances, making the model detect the presence of features rather than its exact location. The specific change we made was to remove average pooling and only utilize max pooling because we believe the former wasn’t extracting important features and was causing the accuracy to be lower. Since we wanted to eventually test the model on images of tilted faces in different angles, we found max pooling to be crucial in the model’s accuracy. Moreover, we added additional layers and experimented to find the optimal solution, meanwhile considering the time we had. Utilizing the GPU engine present in Google Colab, we experimented with different number of layers and tracked the accuracies, which sometimes dropped off from the starting point of 58% accuracy. Eventually, we ended up with a model with over 20 million parameters. We ran the model and received an accuracy ouput of 65%, which was a big improvement. We will dive deeper into the model results below in the conclusion.
 
 
 # Facial Recognition
@@ -71,26 +71,8 @@ Let's use the below image as example for how we applied our model in "real-life"
 
 1. Before performing any face detection, we first converted the image to grayscale to reduce its noise and improve computational efficiency as it is easier to identify faces in grayscale than in color. 
 
-<p align="center">
-    <img src = "images/grayscale.png" alt = "Grayscale image">
-</p>
 
-2. Face detection
-- We used the pre-trained haarcascade classifier built in OpenCV for face detection. This algorithm uses edge or line detection features proposed by Viola and Jones. This model is based on the sum of pixels for various facial features - such as eyes are darker than the nose and cheeks regions, and eyes are darker than the bridge of the nose - and is trained with a lot of positive images with faces and negative images with no face. 
-- We chose to use the OpenCV haarcascade classifier because it is fast and requires less computing power, making it suitable for our limited time and resource. It can also detect faces in a wide range of orientations and scales, making them versatile for a variety of situations and scenarios. 
-- However, we have later learned that the downside of the haarcascade model is that it produces many false positives as shown below. 
-
-<p align="center">
-    <img src = "images/faulty_face_detection.png" alt = "Faulty face detection image">
-</p>
-
-- In order to reduce the number of false positive, we decided to make the filtering process a bit more strict: we increased the minNeighbors to three so false positives from the background are removed; and we modified the scaleFactor to 1.3 so the larger faces, or the main faces in the frame, can be detected faster and more accurately. (See below)
-
-<p align="center">
-    <img src = "images/final_face_detection_results.png" alt = "Improved face detection results">
-</p>
-
-- As we can see, these changes run the risk of missing some faces, but we think eliminating false positives is more important than missing a few true positives in terms of efficiency and accuracy.
+For face detection, we used the pre-trained haarcascade classifier built in OpenCV. This algorithm uses edge or line detection features proposed by Viola and Jones. This model is based on the sum of pixels for various facial features - such as eyes are darker than the nose and cheeks regions, and eyes are darker than the bridge of the nose - and is trained with a lot of positive images with faces and negative images with no face. We chose to use the OpenCV haarcascade classifier because it is fast and requires less computing power, making it suitable for our limited time and resource. It can also detect faces in a wide range of orientations and scales, making them versatile for a variety of situations and scenarios. However, we have later learned that the downside of the haarcascade model is that it produces many false positives. In order to reduce the number of false positive, we decided to make the filtering process a bit more strict: we increased the minNeighbors to three so false positives from the background are removed; and we modified the scaleFactor to 1.3 so the larger faces, or the main faces in the frame, can be detected faster and more accurately. These changes run the risk of missing some faces, but we think eliminating false positives is more important than missing a few true positives in terms of efficiency and accuracy.
 
 # Model Running
 
@@ -110,14 +92,15 @@ Due to our limited time, resource and energy, we were able
 ![](https://github.com/OyuntugsGantumur/ML_project/blob/main/test_images/test_6.png?raw=truev)  |  ![](https://github.com/OyuntugsGantumur/ML_project/blob/main/images/image_result_4.png?raw=true)
 
 # Conclusion
-In conclusion, we were able to find boilerplate code for our model and tweak the parameters in order to further improve and optimize it. The model started off having accuracy of 58% and we were able to raise to a consistent output of 62% for evaluation set, by the usage of batch regularization and max pooling. Looking at the result graph below we can see that there is a case of overfitting happening, which could be remedied by adding more data and reducing the number of features. The main issue that we faced in the process of conducting this research was the facial recognition system by Computer Vision library which would sometimes miss human facial features or falsely detect background areas as human faces, as we explained in detail above. This project could benefit from further research and development where we either find the optimal way of facial recognition or create a model that is fed with datasets filled with images of human faces in various angles and positions.
+
+In conclusion, we were able to find boilerplate code for our model and tweak the parameters in order to further improve and optimize it. The model started off having accuracy of 58% and we were able to raise to a consistent output of 65%, by the usage of batch regularization and max pooling. Looking at the result graph below we can see that there is a case of overfitting happening, which could be remedied by adding more data and reducing the number of features. The main issue that we faced in the process of conducting this research was the facial recognition system by Computer Vision library which would sometimes miss human facial features or falsely detect background areas as human faces, as we explained in detail above. This project could benefit from further research and development where we either find the optimal way of facial recognition or create a model that is fed with datasets filled with images of human faces in various angles and positions.
 
 <p align="center">
     <img src = "images/model_result.png" alt = "Model Result">
 </p>
 
 
-# Run Notebook in Google Colab
+# Google Colab Notebook
 
 Click the link below to run [our notebook](https://github.com/pard187/pard187.github.io/blob/master/Final_Project_Gormley_Giffin_Johnston_Saleh.ipynb) directly in Google Collab. No coding is required to run this notebook, you just need to run every code cell in order or simply click Runtime -> Run all and wait for all cells to run. 
 Click the link below to run [our notebook](https://github.com/pard187/pard187.github.io/blob/master/Final_Project_Gormley_Giffin_Johnston_Saleh.ipynb) directly in Google Collab. No coding is required to run this notebook, you just need to run every code cell in order or simply click Runtime -> Run all and wait for all cells to run.

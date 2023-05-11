@@ -100,8 +100,7 @@ In conclusion, we were able to find boilerplate code for our model and tweak the
 
 # Google Colab Notebook
 
-Click the link below to run [our notebook](https://github.com/pard187/pard187.github.io/blob/master/Final_Project_Gormley_Giffin_Johnston_Saleh.ipynb) directly in Google Collab. No coding is required to run this notebook, you just need to run every code cell in order or simply click Runtime -> Run all and wait for all cells to run. 
-Click the link below to run [our notebook] directly in Google Collab. No coding is required to run this notebook, you just need to run every code cell in order or simply click Runtime -> Run all and wait for all cells to run.
+Click the link below to run [our notebook](https://colab.research.google.com/drive/1K4sAYZQpDTySIta_Q06qgkqRpPirtbl-?authuser=1) directly in Google Collab. No coding is required to run this notebook, you just need to run every code cell in order or simply click Runtime -> Run all and wait for all cells to run. 
 
 <table align="left">
   <td>
